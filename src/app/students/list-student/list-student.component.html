@@ -1,0 +1,30 @@
+<div class="center-div">
+  <p-table [value]="studentsList"
+           [paginator]="studentsList?.length != null" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [totalRecords]="totalRecods" [lazy]="true" (onLazyLoad)="getAllStudents($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-student>
+      <tr>
+        <td>
+          {{student.id}}
+        </td>
+        <td>
+          {{student.name}}
+        </td>
+        <td>
+          {{student.phone}}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <span>
+        {{totalRecods}} Encontrados
+      </span>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,22 @@
+<div class="center-div" style="margin-top: 15%">
+  <p-card header="Cadastrar Aluno">
+    <form [formGroup]="createStudentForm" id="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+          <span>
+          <input id="name" formControlName="name" type="text" pInputText placeholder="Nome do Aluno">
+        </span>
+        </div>
+        <span>
+          <input id="phone" formControlName="phone" type="text" pInputText placeholder="Telefone do Aluno">
+        </span>
+      </div>
+      <div style="margin-top: 10px" class="center-div">
+        <p-button type="submit" label="Cadastrar" styleClass="p-button-rounded p-button-sm p-button-secondary"></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>
+<div class="center-div" >
+<p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+</div>

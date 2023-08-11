@@ -1,0 +1,31 @@
+<div class="center-div">
+  <p-table [value]="usersList"
+           [paginator]="usersList?.length != null" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [totalRecords]="totalRecods"
+           [lazy]="true" (onLazyLoad)="getAllUsers($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Role</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          {{user.id}}
+        </td>
+        <td>
+          {{user.login}}
+        </td>
+        <td>
+          {{user.roles[0].roleName}}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <span>
+        {{totalRecods}} Encontrados
+      </span>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,22 @@
+<div class="center-div" style="margin-top: 15%">
+  <p-card header="Logar">
+    <form [formGroup]="loginForm" id="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+        <span>
+          <input id="login" formControlName="login" type="text" pInputText placeholder="Usuário">
+        </span>
+        </div>
+        <span>
+          <input id="password" formControlName="password" type="password" pInputText placeholder="Senha">
+        </span>
+      </div>
+      <div style="margin-top: 10px" class="center-div">
+        <p-button type="submit" label="Autenticar" styleClass="p-button-rounded p-button-sm p-button-secondary"></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>
+<div class="center-div" >
+  <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+</div>

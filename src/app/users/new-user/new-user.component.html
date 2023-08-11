@@ -1,0 +1,30 @@
+<div class="center-div" style="margin-top: 15%">
+  <p-card header="Cadastrar Usuário">
+    <form [formGroup]="createUserForm" id="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+          <span>
+          <input id="name" formControlName="login" type="text" pInputText placeholder="Login">
+        </span>
+        </div>
+        <div>
+        <span>
+          <input id="phone" formControlName="password" type="password" pInputText placeholder="Senha">
+        </span>
+        </div>
+        <div style="width: 82%">
+        <span>
+          <p-dropdown (onChange)="changeRole($event)" [options]="roles" placeholder="Escolha a role" [editable]="true" optionLabel="label"></p-dropdown>
+        </span>
+        </div>
+      </div>
+      <div style="margin-top: 10px" class="center-div">
+        <p-button type="submit" label="Cadastrar"
+                  styleClass="p-button-rounded p-button-sm p-button-secondary"></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>
+<div class="center-div">
+  <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+</div>
